@@ -21,7 +21,9 @@ app.use(cors({
 // Routes
 app.use('/api/todos', require('./routes/todoRoutes'));
 
-
+app.use("/", (req, res) => {
+  res.send("Health check")
+})
 app.use((req, res) => {
   res.status(404).json({
     success: false,
